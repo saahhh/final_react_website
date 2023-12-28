@@ -78,7 +78,7 @@ const MovieCarousel = () => {
       <Carousel>
         {movies.map((movie) => (
           <Carousel.Item key={movie.id}>
-            <Movie movie={movie} />
+            <MovieCard movie={movie} />
           </Carousel.Item>
         ))}
       </Carousel>

@@ -26,8 +26,14 @@ export default function Header() {
             <Nav.Link as={Link} to="/todos">
               TodoList
             </Nav.Link>
+            <Nav.Link as={Link} to="/weathersearch">
+              WeatherSearch
+            </Nav.Link>
             <Nav.Link as={Link} to="/weather">
-              Weater
+              Now Weather
+            </Nav.Link>
+            <Nav.Link as={Link} to="/music">
+              MusicPlayer
             </Nav.Link>
             <NavDropdown title="Games" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="/numberGuessingGame">

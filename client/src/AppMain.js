@@ -6,7 +6,9 @@ import Header from "./Component/Header";
 import Footer from "./Component/Footer";
 import Home from "./Component/Home";
 import NumberGuessingGame from "./Game/NumberGuessingGame";
-import Weather from "./Weather/Weater";
+import WeatherSearch from "./Weather/WeatherSearch";
+import Weather from "./Weather/Weather";
+import MusicPlayerOld from "./Component/Music/MusicPlayerOld";
 
 function App() {
   return (
@@ -18,8 +20,13 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/movie" element={<Movie />} />
             <Route path="/todos" element={<TodoList />} />
-            <Route path="numberGuessingGame" element={<NumberGuessingGame />} />
+            <Route
+              path="/numberGuessingGame"
+              element={<NumberGuessingGame />}
+            />
+            <Route path="/weathersearch" element={<WeatherSearch />} />
             <Route path="/weather" element={<Weather />} />
+            <Route path="/music" element={<MusicPlayerOld />} />
           </Routes>
         </div>
         <Footer />
