@@ -17,10 +17,9 @@ C:.
 
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=reactos&logoColor=black">
 
-<img src="https://img.shields.io/badge/node-339933?style=for-the-badge&logo=nodedotjs&logoColor=white">
-<img src="https://img.shields.io/badge/기술이름-#제외색상번호?style=for-the-badge&logo=아이콘이름&logoColor=white">
+<img src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
 
-nodedotjs-#339933
+<img src="https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white">
 
 ## Usage
 
