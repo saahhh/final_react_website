@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function TodoNoCss() {
   const [todos, setTodos] = useState([]);
-  const [newTodo, setNewTodo] = useState("");
+  const [newTodo, setNewTodos] = useState("");
   const [count, setCount] = useState(0);
   const [editingIndex, setEditingIndex] = useState(null);
   const [editTodo, setEditTodo] = useState("");
@@ -27,7 +27,7 @@ function TodoNoCss() {
 
   const saveEdit = () => {
     const updatedTodos = [...todos];
-    updateTodos[editingIndex] = editTodo;
+    updatedTodos[editingIndex] = editTodo;
     setTodos(updatedTodos);
     setEditingIndex(null);
   };
@@ -43,7 +43,42 @@ function TodoNoCss() {
 
   return (
     <div>
-      <h2></h2>
+      <h2>Todo List</h2>
+      <div>
+        <input
+          type="text"
+          value={newTodo}
+          onChange={(e) => setNewTodos(e.target.value)}
+        />
+        <button onClick={addTodo}>추가하기</button>
+      </div>
+      <ul>
+        {todos.map((todo, index) => (
+          <li key={index}>
+            {editingIndex === index ? (
+              <div>
+                <input
+                  type="text"
+                  value={editTodo}
+                  onChange={(e) => setEditTodo(e.target.value)}
+                />
+                <button onClick={saveEdit}>저장</button>
+                <button onClick={cancleEdit}>취소</button>
+              </div>
+            ) : (
+              <div>
+                {todo}
+                <button onClick={() => startEditing(index, todo)}>
+                  수정하기
+                </button>
+                <button onClick={() => removeTodo}>삭제하기</button>
+              </div>
+            )}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
+
+export default TodoNoCss;

@@ -13,6 +13,9 @@ const Home = () => {
             <Link to="/movie">
               <Button variant="primary">Go To Movies</Button>
             </Link>
+            <Link to="/weather">
+              <Button variant="primary">Weather</Button>
+            </Link>
           </Card.Body>
         </Col>
       </Row>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Pagination } from "react-bootstrap";
+import { Carousel, Pagination } from "react-bootstrap";
 
 const Movie = () => {
   const [movies, setMovies] = useState([]);
@@ -54,7 +54,39 @@ const Movie = () => {
   );
 };
 
-export default Movie;
+const MovieCarousel = () => {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://yts.mx/api/v2/list_movies.json")
+      .then((response) => {
+        const movieData = response.data.data.movies.map((movie) => ({
+          id: movie.id,
+          title: movie.title,
+          rating: movie.rating,
+          poster: movie.medium_cover_image,
+        }));
+        setMovies(movieData);
+      })
+      .catch((error) => {
+        console.log(`데이터 없음`, error);
+      });
+  }, []);
+  return (
+    <div>
+      <Carousel>
+        {movies.map((movie) => (
+          <Carousel.Item key={movie.id}>
+            <Movie movie={movie} />
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    </div>
+  );
+};
+
+// export default Movie;
 
 const MovieCard = ({ movie }) => (
   <div>
@@ -63,3 +95,5 @@ const MovieCard = ({ movie }) => (
     <p>평점 : {movie.rating}</p>
   </div>
 );
+
+export default MovieCarousel;

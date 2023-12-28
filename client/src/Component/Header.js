@@ -15,24 +15,29 @@ export default function Header() {
           로고
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse>
-          <Nav.Link as={Link} to="/">
-            Home
-          </Nav.Link>
-          <Nav.Link as={Link} to="/movie">
-            Movies
-          </Nav.Link>
-          <Nav.Link as={Link} to="/todos">
-            TodoList
-          </Nav.Link>
-          <NavDropdown title="Games" id="basic-nav-dropdown">
-            <NavDropdown.Item as={Link} to="/numberGuessingGame">
-              number Guessing Game
-            </NavDropdown.Item>
-            <NavDropdown.Item as={Link} to="/quiz">
-              Quiz
-            </NavDropdown.Item>
-          </NavDropdown>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={Link} to="/">
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} to="/movie">
+              Movies
+            </Nav.Link>
+            <Nav.Link as={Link} to="/todos">
+              TodoList
+            </Nav.Link>
+            <Nav.Link as={Link} to="/weather">
+              Weater
+            </Nav.Link>
+            <NavDropdown title="Games" id="basic-nav-dropdown">
+              <NavDropdown.Item as={Link} to="/numberGuessingGame">
+                number Guessing Game
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/quiz">
+                Quiz
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
